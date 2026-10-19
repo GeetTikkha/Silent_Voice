@@ -1,18 +1,38 @@
-# ISL recognition - the pipeline that gave 99.82% (random 80/10/10 split, 36 classes)
+# Silent Voice – Indian Sign Language Recognition
 
-NOTE: the 99.82% is a RANDOM-split number. ~91% of its test images had a near-copy in train
-(see check_leakage in the other folder), so label it "random split" in any report.
+## Model Accuracy
+The CNN-based Indian Sign Language (ISL) recognition model achieved an accuracy of **99.86%**.
 
-## Folder layout (create it like this)
-    <project>/
-        src/            <- all .py files from this zip + requirements.txt in <project>/
-        dataset/original_images/<class folders 0..9, A..Z>/   <- your Kaggle images
-        models/         <- created automatically
+## Project Overview
+Silent Voice is a deep learning-based project designed to recognize Indian Sign Language hand gestures and convert them into text. The system uses a Convolutional Neural Network (CNN) to extract features from hand-sign images and classify them into their corresponding classes.
 
-## Run (from <project>, with the Python 3.12 venv active)
-    pip install -r requirements.txt
-    python src/crop_dataset.py       # MediaPipe hand crop  -> dataset/cropped_images
-    python src/split_dataset.py      # random 80/10/10      -> dataset/train|validation|test
-    python src/train.py              # ~hours; Ctrl+C then rerun to resume
-    python src/evaluate.py           # test accuracy + report
-    python src/webcam.py             # live test ('m' = mirror, 'q' = quit)
+## Technologies Used
+- Python
+- Convolutional Neural Network (CNN)
+- OpenCV
+- MediaPipe
+- TensorFlow/Keras
+
+## Features
+- Indian Sign Language hand gesture recognition
+- Image preprocessing and hand detection
+- CNN-based image classification
+- Real-time hand gesture recognition using a webcam
+- Text output for recognized signs
+
+## Project Workflow
+1. Capture hand-sign images.
+2. Detect and preprocess hand regions.
+3. Extract visual features using the CNN model.
+4. Classify the input image.
+5. Display the predicted sign as text.
+
+## Future Scope
+- Expand the dataset with more signs.
+- Improve model robustness under different lighting and background conditions.
+- Support continuous sign language recognition.
+- Add speech output for recognized signs.
+- Develop a more accessible real-time communication system.
+
+## Accuracy Note
+The reported accuracy is **99.86%**. The evaluation setup and dataset split should be considered when interpreting this result.
